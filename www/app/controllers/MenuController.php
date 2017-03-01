@@ -6,7 +6,9 @@ class MenuController extends ViewController{
 	}
 	public function saveAction($post=" "){
 		  $this->model=new Menu;
-          $this->model->save_menu($_POST);
+      
+         $this->generateviewAction('menu');
+           echo  $this->model->save_menu($_POST);
 	}
 }	
  ?>
