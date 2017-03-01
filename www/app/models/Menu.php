@@ -60,23 +60,6 @@
 				return "Меню успешно создано";
 			}
 
-			/*$table_name='cms_menu';
-			for ($i=0; $i <count($array_links) ; $i++) { 
-				$link=$array_links[$i];
-				$back=$array_back[$i];
-				$sql_insert_user="INSERT INTO $table_name   (name_menu, 
-			                                         main_link,
-			                                         back_link) 
-			                 VALUES('$name','$link','$back')";
-			     var_dump($sql_insert_user);
-			}*/
-		
-
-			/*$res= mysqli_query($this->connect,$sql_insert_user);
-			mysqli_close($this->connect);
-			if($res){
-				return "Страница успешно создана";
-			}*/
 		}
 	}
  ?>
