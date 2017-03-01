@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+header {
+  background: repeating-linear-gradient(45deg, #f0f2ed, #f0f2ed 20px, #f8f4eb 20px, #f8f4eb 40px);
+  box-shadow: 0 4px 6px rgba(0,0,0,.2);  
+}
+/*Menu*/
+#mainnav {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+#main_ul {
+  margin: 0;
+  margin-right: 25px;
+  padding-left: 0;
+  list-style: none;
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  text-align:center;
+}
+#main_ul a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+#main_ul li a {
+  color: #868686;
+  text-transform: uppercase;
+}
+#main_ul li {
+  display: inline-block;
+  margin-left: 25px;
+  transition: .5s linear;
+}
+#main_ul li a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  background: #868686;
+  transition: all 0.5s linear;  
+}
+#main_ul li a:hover:after{
+  width: 100%;
+}
+
+@media screen and (max-width:574px) {
+
+  #main_ul {
+    float: none;
+    margin: 0 25px;
+    }
+#main_ul li:first-of-type {margin-left:0}
+}
+
+@media screen and (max-width:493px) {
+#mainnav {
+  overflow: visible
+}
+#main_ul {
+  height: auto;
+  margin: 25px 25px 0 25px;
+  line-height: 50px;
+}
+#main_ul li {
+  display: block;
+  margin: 0;
+}
+#main_ul li:hover {
+  background: rgba(0,0,0,.1)
+}
+#main_ul li a:after {
+  content: none;
+}
+}
+/*end menu*/
+
+/*добавление страницы*/
+#title_page{
+	width: 50%;
+	height: 45px;
+	font-size: x-large;
+	float: left;
+
+}
+#page_content{
+  width: 50%;
+
+}
+#right_sidebar{
+	float: right;
+	margin-right: 1%;
+	border: 1px solid black;
+	width: 28%;
+	margin-top: 40px;
+}
+#right_footer_sidebar{
+  float: right;
+  margin-right: -28%;
+  border: 1px solid black;
+  width: 28%;
+  margin-top: 315px;
+}
+#btn_footer_public h5{
+  text-align: center;
+  font-weight: bold;
+}
+#public h5, #footer_public h5{
+	text-align: center;
+	border-bottom: 1px solid #e0d2d2;
+	padding-bottom: 10px;
+	margin-top: 10px;
+  font-size: large;
+}
+#public input, #footer_public input{
+	float: right;
+	border: 0;
+	background: 0;
+	font-size: x-large;
+  cursor: pointer;
+}
+#save{
+	margin-left:   10px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	font-size: inherit;
+  cursor: pointer;
+}
+#save:hover, #show:hover{
+  background-color: darkgrey;
+}
+
+#show,#sub_save_page{
+	float: right;
+	margin-right:  10px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	font-size: inherit;
+  cursor: pointer;
+}
+#sub_save_page{
+  background-color: #0085ba;
+  color: white;
+  float: right;
+    font-size: large;
+}
+#sub_save_page:hover{
+  background-color: navy;
+}
+#status, #visible{
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+#status span, #visible span{
+	margin-right: 5px;
+}
+#status label, #visible label{
+	font-size: 15px;
+}
+#status a, #visible a{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+#del{
+  text-decoration: line-through;
+}
+#link,#ins{
+  text-decoration: underline;
+}
+#em{
+  font-style: oblique;
+}
+#bold{
+  font-weight: bold;
+}
+#form_active h3{
+  font-weight: bold;
+  font-size: 18px;
+}
+#close,#add_link,#add_img,#close_img{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#add_link,#add_img{
+  float: right;
+}
+#modal,#imgmodal{
+ top: 20%;
+}
+#calendar_public{
+  margin-left: 15px;
+  display: none;
+}
