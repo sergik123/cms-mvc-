@@ -5,6 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
+	<?php $result=$this->current_menu('link'); ?>
 		<h5>текущая страница</h5>
 		
 	

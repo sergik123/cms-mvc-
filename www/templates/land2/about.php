@@ -5,7 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<?php $this->current_menu('link'); ?>
+<?php $result=$this->current_menu('link'); ?>
 	<h2><?= $this->page_title($id)?></h2>
 		<h4>Совершенный дизайн</h4>
 		<p><?= $this->page_content($id)?></p>

@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Данный класс отвечает за сохранение и выбор шаблона сайта
+ */
 	class Templates{
 		public $link;
 		public $connect;
@@ -7,6 +10,7 @@
 			$this->connect=$this->link->config();
 			
 		}
+		/*метод отвечает за сохранение имени шаблона в бд*/
 		public function save($post=' '){
 			$post=htmlspecialchars($post);
 			$table_name='cms_template';
@@ -19,6 +23,7 @@
 
 			mysqli_close($this->connect);
 		}
+		/*метод отвечает за получение текущего шаблона из бд*/
 		public function get_active_template(){
 			$table_name='cms_template';
 			$sql_select_template="SELECT `template_title` FROM $table_name";

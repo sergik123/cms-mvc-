@@ -4,6 +4,7 @@
 			$this->link=new Connectdb;
 			$this->connect=$this->link->config();
 		}
+		/*метод отвечает за получение title из бд*/
 		public  function title( $params=" ",$source=" ", $params1=" "){
 			if(!empty($params1['show'])){
 				if(!empty($params1['post_title']))
@@ -22,6 +23,7 @@
 				
 			}
 		}
+		/*метод отвечает за получение content из бд*/
 		public  function content( $params=" ",$source=" ", $params1=" "){
 			if(!empty($params1['show'])){
 				if(!empty($params1['post_content']))
@@ -39,7 +41,7 @@
 				mysqli_close($this->connect);
 			}
 		}
-		
+		/*метод отвечает за получение ссылок на статьи из бд*/
 		public function _posts($id=" ",$limit=" "){
 			$count='';			
 			 $where='';
@@ -69,6 +71,7 @@
 			
 			mysqli_close($this->connect);
 		}
+		/*метод отвечает за получение всех статей из бд*/
 		public function all_posts($id=" "){
 			  $where='';
 			 if($id!=' '){
@@ -85,12 +88,13 @@
 				array_push($result_array, $r);
 				}
 				return $result_array;
-			}else{
+			 }else{
 				return $result_array['error']=1;
-			}
+			 }
 			
-			mysqli_close($this->connect);
+			 mysqli_close($this->connect);
 		}
+		/*метод отвечает за обновление статей из бд*/
 		public function update_post($post=" ", $id=" "){
 
 			if(!empty($post['update'])){
@@ -142,6 +146,7 @@
 				mysqli_close($this->connect);
 			}
 		}
+		/*метод отвечает за удаление выбранной статьи из бд*/
 		public function delete_post($id=" "){
 			$post_del=$id[0]['post_link'];
 			$table_name='cms_posts';

@@ -13,6 +13,7 @@ class Savepage {
 		$this->connect=$this->link->config();
 		
 	}
+	/*метод отвечает за сохранение страницы в бд*/
     public function save($post=' ', $link=' '){
     	$title=htmlspecialchars($post['page_title']);
     	$content=$post['page_content'];

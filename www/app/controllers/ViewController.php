@@ -1,7 +1,8 @@
 <?php 
 /**
- * include view page
- *
+ * Контроллер отвечает за подключение файл для отображения. 
+ * Все подключения файлов происходят только в этом контроллере
+ * Все остальные контроллеры наследуются от него
  * @author sergey
  */
 	class ViewController extends ContentController{
@@ -9,10 +10,14 @@
 		protected $data;
 		protected $flag_visible=false;
 		protected $flag_password=false;
+
+	/*метод подключает внутренние файлы cms для отображения*/
 		public function generateviewAction($view=" ", $id=" ",$template=" "){
 			
 			include_once ROOT."/app/views/$view".'.php';
 		}
+
+	/*метод подключает файлы для отображения страниц*/
 		public function generatePageView($id=" ",$template=" ",$path=" ",$access=" "){	
 			if(!empty($access)){
 				$this->validation($access);
@@ -34,6 +39,7 @@
            	  }
 			}
 		}
+	/*метод подключает файлы для отображения статей*/
 		public function generatePostView($id=" ",$template=" ", $access=" ",$path=" "){
 		
 			$this->validation($access);
@@ -57,7 +63,7 @@
 			  }	 
 			}
 		}
-
+	/*метод отвечает за валидацию данных и подключает необходимые страницы*/
 		public function validation($access=" "){
 			$date=explode(' ', $access[0]['date_public']);
 			$year=explode('-', $date[0]);

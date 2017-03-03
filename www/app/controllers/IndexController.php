@@ -7,14 +7,9 @@
 	class IndexController extends ViewController{
 		private $view;
 		private $addmodel;
+		/*метод вызывает ViewController и подключает файл index.php*/
 		public function mainAction(){
-			//$this->view=new ViewController;
 			$this->generateviewAction('index');
-
-			if(!empty($_POST['sub'])){
-				$this->addmodel=new AddUser;
-				$this->addmodel->add($_POST);
-			}
 		}
 	}
  ?>

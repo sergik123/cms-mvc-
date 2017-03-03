@@ -13,6 +13,7 @@ class Savepost {
 		$this->connect=$this->link->config();
 		
 	}
+	/*метод отвечает за сохранение статей в бд*/
     public function save($post=' ', $link=' ',$template=" "){
     	$title=htmlspecialchars($post['post_title']);
     	$content=$post['post_content'];

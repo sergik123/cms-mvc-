@@ -10,12 +10,14 @@ class PageController extends ViewController{
     private $model;
     private $id;
     private $path;
+    /*метод получает от модели название текущего шаблона и подключает страницу для редактирования*/
     public function addAction($params=" "){
         $savetemplate=new Templates;
         $post=$savetemplate->get_active_template();
 
 	      $this->generateviewAction('page','add',$post);
     }
+    /*метод получает от модели данные обо всех страниц и название текущего шаблона. Также подключает файл для отображения*/
     public function allAction($params=" "){
       $result=$this->all_pages();
       $savetemplate=new Templates;
@@ -23,6 +25,7 @@ class PageController extends ViewController{
 
       $this->generateviewAction('allpage',$post,$result);
     }
+    /*метод отвечает за отображение, сохранение, публикацию и обновления страниц.*/
     public function showAction($params=" "){
     	$this->path="show";
     	$this->id=$params[0];
@@ -54,6 +57,7 @@ class PageController extends ViewController{
      
       }
     }
+    /*метод получает от модели данные для отображения одной страницы и название текущего шаблона.*/
     public function singleAction($page_id=' '){
         $savetemplate=new Templates;
         $post=$savetemplate->get_active_template();       
@@ -62,12 +66,14 @@ class PageController extends ViewController{
 
         $this->generatePageView($page_id[0],$post,$main,$access);
     }
+     /*метод получает от модели данные и отображает обновленную страницу */
     public function updateAction($id=" "){
         $this->model=new Pages;
         $post= $this->model->link_page($id[0]);
 
         $this->generateviewAction('page','update',$post);
     }
+    /*метод получает от модели данные и удаляет выбранную страницу */
     public function deleteAction($id=" "){
        $this->model=new Pages;
        $post= $this->model->link_page($id[0]);   

@@ -5,6 +5,7 @@
 			$this->connect=$this->link->config();
 
 		}
+	/*метод отвечает за получение title из бд*/
 		public  function title( $params=" ",$source=" ", $params1=" "){
 			if($params=='show'){
 				if(!empty($params1['page_title']))
@@ -25,6 +26,7 @@
 				
 			}
 		}
+	/*метод отвечает за получение content из бд*/
 		public  function content( $params=" ",$source=" ", $params1=" "){
 			if($params=='show'){
 				if(!empty($params1['page_content']))
@@ -42,6 +44,7 @@
 				mysqli_close($this->connect);
 			}
 		}
+	/*метод отвечает за получение поля main_file из бд*/
 		public function main_file($id=" "){
 			$table_name='cms_pages';
 				$sql_select_template="SELECT `main_file` FROM $table_name WHERE `page_link`=$id";
@@ -53,6 +56,7 @@
 				}
 				mysqli_close($this->connect);
 		}
+	/*метод отвечает за получение всех страниц из бд*/
 		public function all_pages($id=" "){
 			 $result_array=array();
 			 $table_name='cms_pages';
@@ -77,6 +81,7 @@
 			
 			 mysqli_close($this->connect);
 		}
+	/*метод отвечает за получение всех ссылок на страницы из бд*/
 		public function link_page($cart=" "){
 
 			$result_array=array();
@@ -97,6 +102,7 @@
 			
 				mysqli_close($this->connect);
 		}
+	/*метод отвечает за обновление страниц в бд*/
 		public function update_page($post=" ",$id=" "){
 
 			if(!empty($post['update'])){
@@ -149,6 +155,7 @@
 				mysqli_close($this->connect);
 			}
 		}
+	/*метод удаляет выбранную страницу из бд*/
 		public function delete_page($id=" "){
 			$page_del=$id[0]['page_include'];
 			$table_name='cms_pages';

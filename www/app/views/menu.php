@@ -25,7 +25,13 @@
 			var i = document.createElement('input');
 			i.setAttribute('name', 'main_btn'+tmp);
 	        i.setAttribute('type', 'text');
-	       
+	        i.setAttribute('placeholder', 'Введите название меню');
+
+	        var link = document.createElement('input');
+			link.setAttribute('name', 'link_btn'+tmp);
+	        link.setAttribute('type', 'text');
+	       	link.setAttribute('placeholder', 'Введите ссылку');
+
 
 	        var br=document.createElement('br');
 	        var br1=document.createElement('br');
@@ -34,6 +40,7 @@
 	        document.getElementById('menu_page').appendChild(br1);
 	        document.getElementById('menu_page').appendChild(br2);
 	        document.getElementById('menu_page').appendChild(i);
+	        document.getElementById('menu_page').appendChild(link);
 	        document.getElementById('menu_page').appendChild(inp);
 	        document.getElementById('menu_page').appendChild(br);
 
@@ -47,12 +54,19 @@
 			i1.setAttribute('name', 'main_lst-'+tmp+'-'+tmp_lst);
 	        i1.setAttribute('type', 'text');
 	        i1.setAttribute('style', 'margin-left:30px;');
+	        i1.setAttribute('placeholder', 'Введите название меню');
+
+	         var link1 = document.createElement('input');
+			link1.setAttribute('name', 'link_lst-'+tmp+'-'+tmp_lst);
+	        link1.setAttribute('type', 'text');
+	        link1.setAttribute('placeholder', 'Введите ссылку');
 
 	        var br=document.createElement('br');
 	        var br1=document.createElement('br');
 
 	        document.getElementById('menu_page').appendChild(br);
 	        document.getElementById('menu_page').appendChild(i1);
+	        document.getElementById('menu_page').appendChild(link1);
 	        document.getElementById('menu_page').appendChild(br1);
 	}
 	</script>
